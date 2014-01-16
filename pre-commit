@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Redirect output to stderr.
+exec 1>&2
+
+./vendors/check_inline.sh
+RET=$?
+if [ $RET -ne 0 ]; then
+  exit $RET
+fi
+
+exit 0
